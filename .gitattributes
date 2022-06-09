@@ -2,3 +2,10 @@ clang/bin/clang++.real filter=lfs diff=lfs merge=lfs -text
 clang/lib64/liblldb.so.14.0.7git filter=lfs diff=lfs merge=lfs -text
 clang/lib64/libclang.so.13 filter=lfs diff=lfs merge=lfs -text
 clang/lib64/libclang-cpp.so.14git filter=lfs diff=lfs merge=lfs -text
+clang/bin/clang.real filter=lfs diff=lfs merge=lfs -text
+clang/lib/python3.9/site-packages/lldb/_lldb.cpython-39-x86_64-linux-gnu.so filter=lfs diff=lfs merge=lfs -text
+clang/lib64/libclang-cpp.so filter=lfs diff=lfs merge=lfs -text
+clang/lib64/liblldb.so filter=lfs diff=lfs merge=lfs -text
+clang/lib64/liblldb.so.14git filter=lfs diff=lfs merge=lfs -text
+clang/bin/clang-14 filter=lfs diff=lfs merge=lfs -text
+clang/bin/clang-cl filter=lfs diff=lfs merge=lfs -text
