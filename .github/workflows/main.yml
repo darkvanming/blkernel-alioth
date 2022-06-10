@@ -51,7 +51,6 @@ jobs:
            sudo make O=out ARCH=arm64 CC=clang CLANG_TARIPLE=aarch64-linux-gnu- CROSS_COMPILE=aarch64-linux-gnu- -j8 vendor/alioth_defconfig
            sudo make CONFIG_SECTION_MISMATCH_WARN_ONLY=y O=out ARCH=arm64 CC=clang CLANG_TARIPLE=aarch64-linux-gnu- CROSS_COMPILE=aarch64-linux-gnu- -j8
       - uses: actions/upload-artifact@v3
-      - uses: actions/upload-artifact@v3
         with:
             name: kernel
             path: out/arch/arm64/boot
