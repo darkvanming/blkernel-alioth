@@ -39,7 +39,7 @@ jobs:
           sudo apt-get update 
           sudo apt-get upgrade
           sudo apt-get install python bash sed wget git curl zip tar expect make cmake automake autoconf bison perl gperf gawk flex bc zstd openssl libcurl4-openssl-dev
-    - name: get and unzip aospclang
+      - name: get and unzip aospclang
         run: |
            sudo apt-get install aria2 && sudo aria2c https://android.googlesource.com/platform/prebuilts/clang/host/linux-x86/+archive/refs/heads/master.tar.gz && mkdir clang && tar -xzvf master.tar.gz -C clang
            sudo su
@@ -48,7 +48,7 @@ jobs:
            sudo su
            alias cp="cp"
            cd clang/clang-r450784e/ && sudo cp -rf ./bin/* /bin && sudo cp -rf ./lib64/* /lib
-  - name: compile now!
+      - name: compile now!
         run: |
           sudo chmod 777 *
           sudo clang -v
