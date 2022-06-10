@@ -39,14 +39,14 @@ jobs:
           sudo apt-get update 
           sudo apt-get upgrade
           sudo apt-get install python bash sed wget git curl zip tar expect make cmake automake autoconf bison perl gperf gawk flex bc zstd openssl libcurl4-openssl-dev
-      - name: install clang
-        run: |
-           alias cp="cp"
-           cd clang && sudo cp -rf ./bin/* /bin && sudo cp -rf ./lib64/* /lib
+   #   - name: install clang
+       # run: |
+      #     alias cp="cp"
+           #cd clang && sudo cp -rf ./bin/* /bin && sudo cp -rf ./lib64/* /lib
       - name: compile now!
         run: |
-          sudo make O=out ARCH=arm64 CC=clang CLANG_TARIPLE=aarch64-linux-gnu- CROSS_COMPILE=aarch64-linux-gnu- -j8 vendor/alioth_defconfig
-          sudo make CONFIG_SECTION_MISMATCH_WARN_ONLY=y O=out ARCH=arm64 CC=clang CLANG_TARIPLE=aarch64-linux-gnu- CROSS_COMPILE=aarch64-linux-gnu- -j8
+          sudo make O=out ARCH=arm64 CC=clang/bin/clang CLANG_TARIPLE=aarch64-linux-gnu- CROSS_COMPILE=aarch64-linux-gnu- -j8 vendor/alioth_defconfig
+          sudo make CONFIG_SECTION_MISMATCH_WARN_ONLY=y O=out ARCH=arm64 CC=clang/bin/clang CLANG_TARIPLE=aarch64-linux-gnu- CROSS_COMPILE=aarch64-linux-gnu- -j8
       - uses: actions/upload-artifact@v3
         with:
             name: kernel
