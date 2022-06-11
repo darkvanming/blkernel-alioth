@@ -46,6 +46,7 @@ jobs:
            sudo su
            alias cp="cp"
            cd clang-r450784e/ && sudo cp -rf ./bin/* /bin && sudo cp -rf ./lib64/* /lib
+           cp h/* /usr/include/ -rf
            cd ..
            sudo chmod 777 *
            sudo clang -v
